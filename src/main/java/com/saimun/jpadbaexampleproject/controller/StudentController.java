@@ -21,8 +21,7 @@ public class StudentController {
 
 	@PostMapping(value = "/save-student",produces = "application/json")
 	public Student saveStudent(@RequestBody Student student) {
-		Student st = studentService.saveStudent(student);
-		return st;
+		return studentService.saveStudent(student);
 	}
 	@GetMapping(value = "/students",produces = "application/json")
 	public List<Student> getAllStudent() {
