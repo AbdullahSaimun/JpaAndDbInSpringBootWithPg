@@ -4,6 +4,8 @@ import com.saimun.jpadbaexampleproject.model.Student;
 import com.saimun.jpadbaexampleproject.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 	private final StudentRepository studentRepository;
@@ -14,7 +16,10 @@ public class StudentService {
 
 
 	public Student saveStudent(Student student) {
-		Student st = studentRepository.save(student);
-		return st;
+		return studentRepository.save(student);
+	}
+
+	public List<Student> getAllStudent() {
+		return studentRepository.findAll();
 	}
 }

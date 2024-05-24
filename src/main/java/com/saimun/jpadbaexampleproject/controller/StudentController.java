@@ -2,9 +2,12 @@ package com.saimun.jpadbaexampleproject.controller;
 
 import com.saimun.jpadbaexampleproject.model.Student;
 import com.saimun.jpadbaexampleproject.service.StudentService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class StudentController {
@@ -20,5 +23,9 @@ public class StudentController {
 	public Student saveStudent(@RequestBody Student student) {
 		Student st = studentService.saveStudent(student);
 		return st;
+	}
+	@GetMapping(value = "/students",produces = "application/json")
+	public List<Student> getAllStudent() {
+		return studentService.getAllStudent();
 	}
 }
