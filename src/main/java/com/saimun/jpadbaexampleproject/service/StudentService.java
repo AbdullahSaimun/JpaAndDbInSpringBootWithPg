@@ -5,6 +5,7 @@ import com.saimun.jpadbaexampleproject.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -38,5 +39,9 @@ public class StudentService {
 	public void  saveStudentList(List<Student> students) {
 		studentRepository.saveAll(students);
 		System.out.println("saved successfully list");
+	}
+
+	public Optional<Student> findByLastNameEqualsIgnoreCase(String lastName) {
+		return studentRepository.findByLastNameEqualsIgnoreCase(lastName);
 	}
 }

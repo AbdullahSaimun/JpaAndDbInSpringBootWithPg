@@ -17,7 +17,7 @@ public class DataLoader implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Student student1 = new Student("abdulla","saimun","saimun@gmail.com", 25);
-		Student student2 = new Student("ashrafur","hammat","hammat@gmail.com", 18);
+		Student student2 = new Student("ashrafur","rahaman","hammat@gmail.com", 18);
 		Student student3 = new Student("anisu","habib","habib@gmail.com", 12);
 		Student student4 = new Student("abdulla","khan","khan@gmail.com", 9);
 		studentService.saveStudentList(Arrays.asList(student1,student2,student3,student4));
@@ -38,6 +38,8 @@ public class DataLoader implements CommandLineRunner {
 
 		studentService.findAllByAgeAfterAndAgeBefore(10,20).forEach(ob-> System.out.println(ob.getFirstName() + ", " + ob.getAge()));
 		System.out.println("----------------------------d-------------------------");
+		studentService.findByLastNameEqualsIgnoreCase("saimun").ifPresent(System.out::println);
+		System.out.println("-----------------------------f------------------------------");
 
 
 	}

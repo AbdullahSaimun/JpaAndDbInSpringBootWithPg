@@ -13,4 +13,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 	List<Student> findAllByAgeAfter(int age);
 
 	List<Student> findAllByAgeAfterAndAgeBefore(int after, int before);
+
+	Optional<Student> findByLastNameEqualsIgnoreCase(String firstName);
 }
