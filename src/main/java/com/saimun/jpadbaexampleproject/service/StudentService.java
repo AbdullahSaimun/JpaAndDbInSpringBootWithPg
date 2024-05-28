@@ -22,4 +22,21 @@ public class StudentService {
 	public List<Student> getAllStudent() {
 		return studentRepository.findAll();
 	}
+
+	public List<Student> findAllStudentByName(String name) {
+		return studentRepository.findAllByFirstNameContainingIgnoreCase(name);
+	}
+
+	public List<Student> findAllStudentByAgeAfter(int age) {
+		return studentRepository.findAllByAgeAfter(age);
+	}
+
+	public List<Student> findAllByAgeAfterAndAgeBefore(int after, int before) {
+		return studentRepository.findAllByAgeAfterAndAgeBefore(after,before);
+	}
+
+	public void  saveStudentList(List<Student> students) {
+		studentRepository.saveAll(students);
+		System.out.println("saved successfully list");
+	}
 }
