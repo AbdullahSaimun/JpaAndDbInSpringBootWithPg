@@ -40,6 +40,8 @@ public class DataLoader implements CommandLineRunner {
 		System.out.println("----------------------------d-------------------------");
 		studentService.findByLastNameEqualsIgnoreCase("saimun").ifPresent(System.out::println);
 		System.out.println("-----------------------------f------------------------------");
+		studentService.findAllListByIds(Arrays.asList(1,4,2,3,5)).forEach(obj -> System.out.println(obj));
+		System.out.println("--------------g-----------------------------------------------------------------------------");
 
 
 	}

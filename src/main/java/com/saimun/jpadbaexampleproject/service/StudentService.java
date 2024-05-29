@@ -44,4 +44,8 @@ public class StudentService {
 	public Optional<Student> findByLastNameEqualsIgnoreCase(String lastName) {
 		return studentRepository.findByLastNameEqualsIgnoreCase(lastName);
 	}
+
+	public List<Student> findAllListByIds(List<Integer> ids) {
+		return studentRepository.findAllById(ids);
+	}
 }
