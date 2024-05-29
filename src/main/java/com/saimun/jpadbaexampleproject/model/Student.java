@@ -13,9 +13,20 @@ public class Student {
 	private String firstName;
 	private String lastName;
 
+	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+	private StudentProfile studentProfile;
+
 	@Column(unique = true)
 	private String email;
 	private int age;
+
+	public StudentProfile getStudentProfile() {
+		return studentProfile;
+	}
+
+	public void setStudentProfile(StudentProfile studentProfile) {
+		this.studentProfile = studentProfile;
+	}
 
 	public Student(String firstName, String lastName, String email, int age) {
 		this.firstName = firstName;
