@@ -15,10 +15,8 @@ public class Student {
 	private Integer id;
 	private String firstName;
 	private String lastName;
-
 	@OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
 	private StudentProfile studentProfile;
-
 	@ManyToOne
 	@JoinColumn(name = "school_id")
 	@JsonBackReference
@@ -27,6 +25,10 @@ public class Student {
 //	@Column(unique = true)
 	private String email;
 	private int age;
+
+
+
+
 
 	public StudentProfile getStudentProfile() {
 		return studentProfile;

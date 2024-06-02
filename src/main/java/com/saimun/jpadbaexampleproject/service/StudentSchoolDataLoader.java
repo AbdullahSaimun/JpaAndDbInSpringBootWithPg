@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 @Component
 public class StudentSchoolDataLoader implements CommandLineRunner {
@@ -36,7 +37,10 @@ public class StudentSchoolDataLoader implements CommandLineRunner {
 		profile.setStudent(student1);
 		student1.setStudentProfile(profile);
 
+		student2.setStudentProfile(profile);
+
 		var schoolEntity = schoolRepository.save(sc);
+
 		var students = schoolEntity.getStudents();
 		System.out.println(students);
 		System.out.println("---------------a----------a----");

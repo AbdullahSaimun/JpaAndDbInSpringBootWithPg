@@ -11,12 +11,12 @@ public class School {
 	@Id
 	@GeneratedValue
 	private Integer id;
-
 	private String name;
-
 	@OneToMany(mappedBy = "school", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private List<Student> students;
+
+
 
 	public School() {
 	}
